@@ -1,74 +1,74 @@
-# 🚗 Plateforme de Covoiturage Universitaire (C++)
+# 🚗 University Carpooling Platform (C++)
 
-Une application de covoiturage simple développée en C++ pour faciliter le partage de trajets entre étudiants et membres de la communauté universitaire.
+A simple carpooling application developed in C++ to facilitate ride sharing among students and members of the university community.
 
 ## 📋 Description
 
-Ce projet implémente un système de covoiturage en ligne de commande permettant aux utilisateurs de s'inscrire, de proposer des trajets en tant que conducteurs et de réserver des places en tant que passagers. Les données sont persistées dans des fichiers texte pour une utilisation simple et locale.
+This project implements a command-line carpooling system that allows users to sign up, offer rides as drivers, and book seats as passengers. Data is persisted in text files for simple, local usage.
 
-## ✨ Fonctionnalités
+## ✨ Features
 
-### Authentification Utilisateur
-- **Inscription** : Création de compte avec nom, email, mot de passe et numéro de téléphone
-- **Connexion** : Authentification sécurisée par email/mot de passe
-- **Déconnexion** : Gestion de session utilisateur
+### User Authentication
+- **Sign up**: Create an account with name, email, password, and phone number
+- **Log in**: Secure authentication via email/password
+- **Log out**: User session management
 
-### Gestion des Trajets
-- **Publication de trajets** : Les conducteurs peuvent publier des trajets avec :
-  - Ville de départ et d'arrivée
-  - Date et heure du trajet
-  - Nombre de places disponibles
-  - Prix par personne
-- **Recherche de trajets** : Recherche par ville de départ et d'arrivée
-- **Réservation** : Réservation de places disponibles sur les trajets
-- **Consultation** : Affichage de tous les trajets disponibles
+### Ride Management
+- **Post rides**: Drivers can publish rides with:
+  - Departure and arrival cities
+  - Ride date and time
+  - Number of available seats
+  - Price per person
+- **Search rides**: Search by departure and arrival city
+- **Booking**: Book available seats on rides
+- **Browse**: Display all available rides
 
-### Persistance des Données
-- Sauvegarde automatique des utilisateurs dans `users.txt`
-- Sauvegarde automatique des trajets dans `rides.txt`
-- Format CSV avec séparateur `;`
+### Data Persistence
+- Automatic user saving to `users.txt`
+- Automatic ride saving to `rides.txt`
+- CSV format with `;` separator
 
-## 📁 Structure du Projet
+## 📁 Project Structure
 
 ```
 cpp_carpooling/
-├── main.cpp              # Point d'entrée de l'application (interface utilisateur)
-├── CarpoolSystem.h       # Classe principale gérant la logique métier
-├── Models.h              # Structures de données (User, Ride)
-├── build_and_run.bat     # Script de compilation et exécution (Windows)
-├── users.txt             # Base de données des utilisateurs
-└── rides.txt             # Base de données des trajets
+├── main.cpp              # Application entry point (user interface)
+├── CarpoolSystem.h       # Main class handling business logic
+├── Models.h              # Data structures (User, Ride)
+├── build_and_run.bat     # Build and run script (Windows)
+├── users.txt             # Users database
+└── rides.txt             # Rides database
 ```
 
-### Détails des fichiers
+### File details
 
-- **`main.cpp`** : Gère l'interface utilisateur en ligne de commande avec menus interactifs
-- **`CarpoolSystem.h`** : Contient la classe `CarpoolSystem` qui gère :
-  - La liste des utilisateurs et des trajets
-  - L'authentification
-  - La recherche et la réservation de trajets
-  - La lecture/écriture des fichiers de données
-- **`Models.h`** : Définit les structures :
-  - `User` : Informations utilisateur (id, nom, email, mot de passe, téléphone)
-  - `Ride` : Informations trajet (id, conducteur, origine, destination, date, heure, places, prix)
+- **`main.cpp`**: Handles the command-line user interface with interactive menus
+- **`CarpoolSystem.h`**: Contains the `CarpoolSystem` class, which manages:
+  - The list of users and rides
+  - Authentication
+  - Ride search and booking
+  - Reading/writing the data files
+- **`Models.h`**: Defines the structures:
+  - `User`: User information (id, name, email, password, phone)
+  - `Ride`: Ride information (id, driver, origin, destination, date, time, seats, price)
 
-## 🛠️ Prérequis
+## 🛠️ Requirements
 
-- Un compilateur C++ compatible :
-  - **Windows** : MinGW (g++), MSVC, ou Clang
-  - **Linux** : g++ ou clang++
-  - **macOS** : Xcode Command Line Tools (g++ ou clang++)
+- A compatible C++ compiler:
+  - **Windows**: MinGW (g++), MSVC, or Clang
+  - **Linux**: g++ or clang++
+  - **macOS**: Xcode Command Line Tools (g++ or clang++)
 
-## 🚀 Compilation et Exécution
+## 🚀 Build and Run
 
 ### Windows
 
-#### Méthode 1 : Script automatique
+#### Method 1: Automatic script
 ```powershell
 .\build_and_run.bat
 ```
 
-#### Méthode 2 : Compilation manuelle
+#### Method 2: Manual compilation
 ```powershell
 g++ main.cpp -o main.exe
 .\main.exe
@@ -81,72 +81,73 @@ g++ main.cpp -o main
 ./main
 ```
 
-## 📖 Utilisation
+## 📖 Usage
 
-1. **Lancez l'application** en exécutant le fichier compilé
-2. **Créez un compte** ou **connectez-vous** avec un compte existant
-3. Une fois connecté, utilisez le menu pour :
-   - **Chercher un trajet** : Recherchez des trajets disponibles entre deux villes
-   - **Proposer un trajet** : Publiez un nouveau trajet en tant que conducteur
-   - **Voir tous les trajets** : Consultez la liste complète des trajets disponibles
-   - **Se déconnecter** : Fermez votre session
+1. **Start the application** by running the compiled executable
+2. **Create an account** or **log in** with an existing account
+3. Once logged in, use the menu to:
+   - **Search for a ride**: Find available rides between two cities
+   - **Offer a ride**: Post a new ride as a driver
+   - **View all rides**: Browse the full list of available rides
+   - **Log out**: End your session
 
-### Exemple d'utilisation
+### Usage example
 
 ```
 ==========================================
-   PLATEFORME DE COVOITURAGE UNIVERSITAIRE
+   UNIVERSITY CARPOOLING PLATFORM
 ==========================================
-1. Se connecter
-2. S'inscrire
-3. Quitter
-Choix: 2
+1. Log in
+2. Sign up
+3. Quit
+Choice: 2
 
-Nom complet: Jean_Dupont
+Full name: Jean_Dupont
 Email: jean.dupont@univ.fr
-Mot de passe: motdepasse123
-Telephone: 0612345678
->> Inscription reussie ! Vous pouvez vous connecter.
+Password: motdepasse123
+Phone: 0612345678
+>> Registration successful! You can now log in.
 ```
 
-## 🔒 Sécurité
+## 🔒 Security
 
-⚠️ **Note importante** : Ce projet est un prototype éducatif. Les mots de passe sont stockés en clair dans les fichiers texte. Pour une utilisation en production, il serait nécessaire d'implémenter :
-- Le hachage des mots de passe (bcrypt, Argon2, etc.)
-- La validation des entrées utilisateur
-- La gestion des erreurs plus robuste
-- L'encryption des données sensibles
+⚠️ **Important note**: This project is an educational prototype. Passwords are stored in plain text in the text files. For production use, it would be necessary to implement:
 
-## 📝 Format des Fichiers de Données
+- Password hashing (bcrypt, Argon2, etc.)
+- User input validation
+- More robust error handling
+- Encryption of sensitive data
+
+## 📝 Data File Formats
 
 ### users.txt
-Format CSV avec séparateur `;` :
+CSV format with `;` separator:
 ```
 id;nom;email;mot_de_passe;telephone
 ```
 
 ### rides.txt
-Format CSV avec séparateur `;` :
+CSV format with `;` separator:
 ```
 id;driverId;nom_conducteur;origine;destination;date;heure;places_disponibles;prix
 ```
 
-## 🤝 Contribution
+## 🤝 Contributing
 
-Les contributions sont les bienvenues ! N'hésitez pas à :
-- Signaler des bugs
-- Proposer de nouvelles fonctionnalités
-- Améliorer la documentation
-- Optimiser le code
+Contributions are welcome! Feel free to:
+- Report bugs
+- Propose new features
+- Improve the documentation
+- Optimize the code
 
-## 📄 Licence
+## 📄 License
 
-Ce projet est fourni tel quel à des fins éducatives.
+This project is provided as-is for educational purposes.
 
-## 👨‍💻 Auteur
+## 👨‍💻 Author
 
-Développé dans le cadre d'un projet universitaire en C++.
+Developed as part of a university project in C++.
 
 ---
 
-**Note** : Ce projet est conçu pour l'apprentissage et la démonstration de concepts de programmation orientée objet en C++. Pour une application de production, une architecture plus robuste avec une base de données, une interface graphique et des mesures de sécurité avancées serait recommandée.
+**Note**: This project is designed for learning and demonstrating object-oriented programming concepts in C++. For a production application, a more robust architecture would be required.
